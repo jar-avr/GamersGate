@@ -1,0 +1,513 @@
+#colors() {
+  primary: #141414;
+  secondary: #4D4D4D;
+  text1: #DEDEDE;
+  text2: #B5B5B5;
+  text3: #E5E5E5;
+  red: #EC4E20;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#bundle() {
+  .button {
+    cursor: pointer;
+    img {
+      width: 222px;
+    }
+    padding: 0;
+    border: none;
+    background: none;
+  }
+  .email {
+    width: 300px;
+    .envelope {
+      float: left;
+      img {
+        width: 67px;
+      }
+    }
+    .emailText {
+      float: left;
+      text-align: center;
+      position: relative;
+      transform: translateX(10%) translateY(25%);
+    }
+  }
+}
+
+html, body {
+  box-sizing: border-box;
+  background: #colors[primary];
+  padding: 0;
+  margin: 0;
+  font-family: work-sans, sans-serif;
+  font-size: 20px;
+
+  #transition-disabled {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+  }
+
+  #footer {
+    height: 320px;
+    .email {
+      #bundle.email;
+    }
+    @media (max-width: 992px) {
+      height: 540px;
+    }
+    #innerFooter {
+      height: 320px;
+      display: flex;
+      justify-content: center;
+      .container {
+        padding-bottom: 0;
+        padding-top: 0;
+      }
+      .mobileReferences, .mobileEmailText, .mobileEnvelope {
+        display: none;
+      }
+      @media (max-width: 1400px) {
+        width: 90%;
+        font-size: 18px;
+        .footerRef {
+          padding-left: 10%;
+        }
+      }
+      @media (max-width: 992px) {
+        height: 540px;
+        flex-direction: column;
+        align-items: flex-start;
+        #lowerLogo {
+          display: none;
+        }
+        #footerContainer {
+          display: none;
+        }
+        .mobileReferences {
+          display: flex;
+          flex-direction: column;
+          a {
+            padding-bottom: 30px;
+          }
+        }
+        .mobileEnvelope {
+          display: inline-block;
+          align-self: center;
+          img {
+            padding-top: 15%;
+            width: 67px;
+          }
+        }
+        .mobileEmailText {
+          display: inline-block;
+          align-self: center;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .menu {
+    background: #colors[secondary];
+    color: #colors[text1];
+    height: 140px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 767px) {
+      height: 100px;
+    }
+
+    a {
+      color: #DEDEDE;
+      text-decoration: none;
+    }
+    .logo img {
+      width: 115px;
+      @media (max-width: 992px) {
+        width: 73px;
+      }
+    }
+    .innerMenu {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 80%;
+      height: 140px;
+      position: relative;
+
+      .references {
+        width: 300px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .email {
+        #bundle.email;
+      }
+      input {
+        background-color: #colors[primary];
+        padding: 10px;
+        font-size: 17px;
+        color: #colors[text1];
+        float: left;
+        width: 62%;
+      }
+      button {
+        float: left;
+        width: 38%;
+        padding: 10px;
+        background: #B5B5B5;
+        color: #colors[primary];
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .menuIcon {
+        width: 70px;
+        display: none;
+      }
+      @media (max-width: 1400px) {
+        width: 70%;
+        #upperEmail {
+          display: none;
+        }
+      }
+      @media (max-width: 1200px) {
+        width: 80%;
+        .search {
+          display: none;
+        }
+        .menuIcon {
+          display: inline-block;
+        }
+      }
+      @media (max-width: 767px) {
+        height: 100px;
+        .menuIcon {
+          width: 50px;
+        }
+        .references {
+          display: none;
+        }
+      }
+    }
+    .login {
+      position: absolute;
+      top: 0;
+      right: 0;
+      border: none;
+      padding: 0;
+      background-color: #colors[primary];
+      cursor: pointer;
+      img {
+        width: 118px;
+      }
+      @media (max-width: 1200px) {
+        display: none;
+      }
+    }
+  }
+  .landingContainer {
+    padding-top: 150px;
+    padding-bottom: 150px;
+    @media (max-width: 450px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  .container {
+    color: #colors[text2];
+    .title {
+      font-weight: bolder;
+      @media (max-width: 767px) {
+        font-size: 18px;
+      }
+    }
+    .studio {
+      font-size: 16px;
+      font-weight: lighter;
+      padding-top: 30px;
+      @media (max-width: 767px) {
+        font-size: 14px;
+      }
+    }
+    .price {
+      font-size: 18px;
+      color: #colors[text3];
+      @media (max-width: 767px) {
+        font-size: 16px;
+      }
+    }
+     .moreGamesButton {
+       position: relative;
+       transform: translateY(-50%);
+       .right {
+         position: absolute;
+         right: 0;
+         top: -10px;
+         @media (max-width: 1200px) {
+           margin-right: 2.5%;
+         }
+         @media (max-width: 767px) {
+           display: none;
+         }
+         a {
+           #bundle.button;
+         }
+       }
+       .left {
+         color: #colors[red];
+         @media (max-width: 450px) {
+           padding-left: 32%;
+           padding-bottom: 40px;
+         }
+       }
+       #left2 {
+         @media (max-width: 450px) {
+           padding-left: 40%;
+         }
+       }
+       #left3 {
+         @media (max-width: 450px) {
+           padding-left: 25.5%;
+         }
+       }
+    }
+    .main1 {
+      .col {
+        padding-bottom: 60px;
+        @media (max-width: 450px) {
+          padding-left: 25%;
+        }
+        img {
+          height: 230px;
+        }
+      }
+      .fading6 {
+        @media (max-width: 1400px) {
+          display: none;
+        }
+        @media (max-width: 992px) {
+          display: inline-block;
+        }
+      }
+      .fading5 {
+        @media (max-width: 1200px) {
+          display: none;
+        }
+        @media (max-width: 992px) {
+          display: inline-block;
+        }
+      }
+    }
+    .lowerButton {
+      display: none;
+      padding-top: 30px;
+      a {
+        #bundle.button;
+      }
+      @media (max-width: 767px) {
+        display: inline-block;
+        padding-left: 20%;
+      }
+      @media (max-width: 450px) {
+        padding-left: 18%;
+      }
+      @media (max-width: 350px) {
+        padding-left: 16%;
+      }
+    }
+    .main2 {
+      margin-top: 0;
+      .col {
+        padding-bottom: 20px;
+        .mainImage {
+          width: 625px;
+        }
+        .mobileImage {
+          width: 350px;
+          display: none;
+        }
+        @media (max-width: 1400px) {
+          padding-left: 10%;
+          .mainImage {
+            width: 800px;
+          }
+        }
+        @media (max-width: 992px) {
+          padding-left: 10%;
+          .mainImage {
+            width: 600px;
+          }
+        }
+        @media (max-width: 767px) {
+          .mobileImage {
+            display: inline-block;
+          }
+          .mainImage {
+            display: none;
+          }
+          padding-left: 15%;
+        }
+        @media (max-width: 450px) {
+          .mobileImage {
+            width: 230px;
+          }
+        }
+
+      }
+    }
+    .hotGames {
+      display: flex;
+      position: relative;
+      transform: translateY(-50%);
+      img {
+        width: 62px;
+        @media (max-width: 450px) {
+          display: none;
+        }
+      }
+      .text {
+        color: #colors[primary];
+        font-weight: bold;
+        vertical-align: middle;
+        line-height: 62px;
+        transform: translateX(20px);
+      }
+      @media (max-width: 1400px) {
+        padding-left: 10%;
+      }
+      @media (max-width: 992px) {
+        padding-left: 10%;
+      }
+    }
+    .main3 {
+      .col {
+        .mainImage {
+          width: 1285px;
+        }
+        .mobileImage {
+          width: 350px;
+          display: none;
+        }
+        @media (max-width: 1400px) {
+          .mainImage {
+            width: 1000px;
+          }
+        }
+        @media (max-width: 1200px) {
+          .mainImage {
+            width: 800px;
+          }
+        }
+        @media (max-width: 992px) {
+          .mainImage {
+            width: 600px;
+          }
+        }
+        @media (max-width: 767px) {
+          .mobileImage {
+            display: inline-block;
+          }
+          .mainImage {
+            display: none;
+          }
+          padding-left: 15%;
+        }
+        @media (max-width: 450px) {
+          .mobileImage {
+            width: 230px;
+            padding-left: 8%;
+          }
+        }
+        .imgText {
+          position: relative;
+          text-align: center;
+          color: #colors[text1];
+          .innerText {
+            position: absolute;
+            top: 45%;
+            left: 2%;
+            width: 60%;
+            text-align: left;
+            @media (max-width: 1400px) {
+              font-size: 14px;
+              left: 8%;
+            }
+          }
+          .imgButton {
+            position: absolute;
+            bottom: 2%;
+            left: 2%;
+            a {
+              #bundle.button;
+            }
+            @media (max-width: 1400px) {
+              left: 8%;
+            }
+            @media (max-width: 992px) {
+              display: none;
+            }
+          }
+          @media (max-width: 767px) {
+            display: none;
+          }
+        }
+      }
+    }
+    .underImgButton {
+      display: none;
+      padding-top: 2%;
+      @media (max-width: 992px) {
+        display: inline-block;
+        padding-left: 6.5%;
+      }
+      @media (max-width: 767px) {
+        padding-left: 25%;
+      }
+      @media (max-width: 450px) {
+        padding-left: 17%;
+      }
+      a {
+        #bundle.button;
+      }
+    }
+    .outerText {
+      display: none;
+      font-size: 14px;
+      padding-left: 13%;
+      padding-top: 2%;
+      color: #colors[text1];
+      width: 80%;
+
+      @media (max-width: 767px) {
+        display: inline-block;
+      }
+      @media (max-width: 450px) {
+        padding-left: 20%;
+      }
+    }
+    .footerRef {
+      padding-left: 20%;
+      padding-bottom: 50px;
+    }
+    #lowest {
+      padding-bottom: 0;
+    }
+  }
+  .banner1 {
+    background: #colors[red];
+  }
+  .banner2 {
+    background: #00A9A5;
+  }
+}
