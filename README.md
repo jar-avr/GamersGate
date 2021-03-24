@@ -1,0 +1,2 @@
+# GamersGate
+A school project.
