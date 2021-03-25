@@ -36,6 +36,35 @@
       transform: translateX(10%) translateY(25%);
     }
   }
+  .textInBox {
+    .title {
+      font-weight: bolder;
+      margin-top: 5px;
+      @media (max-width: 767px) {
+        font-size: 18px;
+      }
+    }
+    .studio {
+      font-size: 16px;
+      font-weight: lighter;
+      padding-top: 30px;
+      @media (max-width: 767px) {
+        font-size: 14px;
+      }
+    }
+    .price {
+      font-size: 18px;
+      color: #colors[text3];
+      @media (max-width: 767px) {
+        font-size: 16px;
+      }
+    }
+  }
+  .scale {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+  }
 }
 
 html, body {
@@ -45,6 +74,10 @@ html, body {
   margin: 0;
   font-family: work-sans, sans-serif;
   font-size: 20px;
+  img {
+    opacity: 1;
+    transition: .5s;
+  }
 
   #transition-disabled {
     -webkit-transition: none !important;
@@ -225,28 +258,25 @@ html, body {
     }
   }
   .container {
-    color: #colors[text2];
-    .title {
-      font-weight: bolder;
-      @media (max-width: 767px) {
-        font-size: 18px;
+    @-webkit-keyframes flash {
+      0% {
+        opacity: .8;
+      }
+      100% {
+        opacity: 1;
       }
     }
-    .studio {
-      font-size: 16px;
-      font-weight: lighter;
-      padding-top: 30px;
-      @media (max-width: 767px) {
-        font-size: 14px;
+    @keyframes flash {
+      0% {
+        opacity: .8;
+      }
+      100% {
+        opacity: 1;
       }
     }
-    .price {
-      font-size: 18px;
-      color: #colors[text3];
-      @media (max-width: 767px) {
-        font-size: 16px;
-      }
-    }
+     a {
+      text-decoration: none;
+     }
      .moreGamesButton {
        position: relative;
        transform: translateY(-50%);
@@ -266,30 +296,40 @@ html, body {
        }
        .left {
          color: #colors[red];
+         @media (max-width: 767px) {
+           padding-left: 3%;
+         }
          @media (max-width: 450px) {
-           padding-left: 32%;
+           display: flex;
+           justify-content: center;
            padding-bottom: 40px;
-         }
-       }
-       #left2 {
-         @media (max-width: 450px) {
-           padding-left: 40%;
-         }
-       }
-       #left3 {
-         @media (max-width: 450px) {
-           padding-left: 25.5%;
+           padding-left: 0;
          }
        }
     }
     .main1 {
       .col {
         padding-bottom: 60px;
+        @media (max-width: 767px) {
+          padding-left: 5%;
+        }
         @media (max-width: 450px) {
-          padding-left: 25%;
+          display: flex;
+          justify-content: center;
         }
         img {
           height: 230px;
+          @media (max-width: 450px) {
+            height: 260px;
+          }
+        }
+        img:hover {
+          #bundle.scale;
+          animation: flash 1.5s;
+        }
+        a {
+          color: #colors[text2];
+          #bundle.textInBox;
         }
       }
       .fading6 {
@@ -297,7 +337,7 @@ html, body {
           display: none;
         }
         @media (max-width: 992px) {
-          display: inline-block;
+          display: flex;
         }
       }
       .fading5 {
@@ -305,7 +345,7 @@ html, body {
           display: none;
         }
         @media (max-width: 992px) {
-          display: inline-block;
+          display: flex;
         }
       }
     }
@@ -316,18 +356,20 @@ html, body {
         #bundle.button;
       }
       @media (max-width: 767px) {
-        display: inline-block;
-        padding-left: 20%;
-      }
-      @media (max-width: 450px) {
-        padding-left: 18%;
-      }
-      @media (max-width: 350px) {
-        padding-left: 16%;
+        display: flex;
+        justify-content: center;
       }
     }
     .main2 {
       margin-top: 0;
+      img:hover {
+        #bundle.scale;
+        animation: flash 1.5s;
+      }
+      a {
+        color: #colors[primary];
+        #bundle.textInBox;
+      }
       .col {
         padding-bottom: 20px;
         .mainImage {
@@ -338,13 +380,13 @@ html, body {
           display: none;
         }
         @media (max-width: 1400px) {
-          padding-left: 10%;
+          display: flex;
+          justify-content: center;
           .mainImage {
             width: 800px;
           }
         }
         @media (max-width: 992px) {
-          padding-left: 10%;
           .mainImage {
             width: 600px;
           }
@@ -356,7 +398,6 @@ html, body {
           .mainImage {
             display: none;
           }
-          padding-left: 15%;
         }
         @media (max-width: 450px) {
           .mobileImage {
@@ -372,7 +413,7 @@ html, body {
       transform: translateY(-50%);
       img {
         width: 62px;
-        @media (max-width: 450px) {
+        @media (max-width: 767px) {
           display: none;
         }
       }
@@ -384,10 +425,17 @@ html, body {
         transform: translateX(20px);
       }
       @media (max-width: 1400px) {
-        padding-left: 10%;
+        padding-left: 13%;
       }
-      @media (max-width: 992px) {
-        padding-left: 10%;
+      @media (max-width: 1200px) {
+        padding-left: 6%;
+      }
+      @media (max-width: 767px) {
+        padding-left: 0;
+        justify-content: center;
+        .text {
+          transform: translateX(0);
+        }
       }
     }
     .main3 {
@@ -457,6 +505,9 @@ html, body {
             @media (max-width: 992px) {
               display: none;
             }
+            img:hover {
+              opacity: .9;
+            }
           }
           @media (max-width: 767px) {
             display: none;
@@ -479,6 +530,9 @@ html, body {
       }
       a {
         #bundle.button;
+      }
+      img:hover {
+        opacity: .9;
       }
     }
     .outerText {

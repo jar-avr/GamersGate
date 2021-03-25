@@ -123,7 +123,27 @@
 }
 @media (max-width: 992px) {
   .contLeft .main1 {
-    margin-right: 0px;
+    margin-right: 0;
+  }
+}
+@media (max-width: 1400px) {
+  .contLeft .main1 .fade1 {
+    display: none;
+  }
+}
+@media (max-width: 1200px) {
+  .contLeft .main1 .fade2 {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  .contLeft .main1 .fade2 {
+    display: inline-block;
+  }
+}
+@media (max-width: 450px) {
+  .contLeft .main1 .fade2 {
+    display: none;
   }
 }
 .contLeft .containerButton {

@@ -104,7 +104,23 @@
     margin-top: 50px;
     margin-right: 10px;
     @media (max-width: 992px) {
-      margin-right: 0px;
+      margin-right: 0;
+    }
+    .fade1 {
+      @media (max-width: 1400px) {
+        display: none;
+      }
+    }
+    .fade2 {
+      @media (max-width: 1200px) {
+        display: none;
+      }
+      @media (max-width: 992px) {
+        display: inline-block;
+      }
+      @media (max-width: 450px) {
+        display: none;
+      }
     }
   }
   .containerButton {

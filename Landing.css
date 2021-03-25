@@ -10,6 +10,11 @@ body {
   font-family: work-sans, sans-serif;
   font-size: 20px;
 }
+html img,
+body img {
+  opacity: 1;
+  transition: 0.5s;
+}
 html #transition-disabled,
 body #transition-disabled {
   -webkit-transition: none !important;
@@ -279,42 +284,25 @@ body .landingContainer {
     padding-right: 0;
   }
 }
-html .container,
-body .container {
-  color: #B5B5B5;
-}
-html .container .title,
-body .container .title {
-  font-weight: bolder;
-}
-@media (max-width: 767px) {
-  html .container .title,
-  body .container .title {
-    font-size: 18px;
+@-webkit-keyframes flash {
+  0% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
   }
 }
-html .container .studio,
-body .container .studio {
-  font-size: 16px;
-  font-weight: lighter;
-  padding-top: 30px;
-}
-@media (max-width: 767px) {
-  html .container .studio,
-  body .container .studio {
-    font-size: 14px;
+@keyframes flash {
+  0% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
   }
 }
-html .container .price,
-body .container .price {
-  font-size: 18px;
-  color: #E5E5E5;
-}
-@media (max-width: 767px) {
-  html .container .price,
-  body .container .price {
-    font-size: 16px;
-  }
+html .container a,
+body .container a {
+  text-decoration: none;
 }
 html .container .moreGamesButton,
 body .container .moreGamesButton {
@@ -354,38 +342,92 @@ html .container .moreGamesButton .left,
 body .container .moreGamesButton .left {
   color: #EC4E20;
 }
+@media (max-width: 767px) {
+  html .container .moreGamesButton .left,
+  body .container .moreGamesButton .left {
+    padding-left: 3%;
+  }
+}
 @media (max-width: 450px) {
   html .container .moreGamesButton .left,
   body .container .moreGamesButton .left {
-    padding-left: 32%;
+    display: flex;
+    justify-content: center;
     padding-bottom: 40px;
-  }
-}
-@media (max-width: 450px) {
-  html .container .moreGamesButton #left2,
-  body .container .moreGamesButton #left2 {
-    padding-left: 40%;
-  }
-}
-@media (max-width: 450px) {
-  html .container .moreGamesButton #left3,
-  body .container .moreGamesButton #left3 {
-    padding-left: 25.5%;
+    padding-left: 0;
   }
 }
 html .container .main1 .col,
 body .container .main1 .col {
   padding-bottom: 60px;
 }
+@media (max-width: 767px) {
+  html .container .main1 .col,
+  body .container .main1 .col {
+    padding-left: 5%;
+  }
+}
 @media (max-width: 450px) {
   html .container .main1 .col,
   body .container .main1 .col {
-    padding-left: 25%;
+    display: flex;
+    justify-content: center;
   }
 }
 html .container .main1 .col img,
 body .container .main1 .col img {
   height: 230px;
+}
+@media (max-width: 450px) {
+  html .container .main1 .col img,
+  body .container .main1 .col img {
+    height: 260px;
+  }
+}
+html .container .main1 .col img:hover,
+body .container .main1 .col img:hover {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  animation: flash 1.5s;
+}
+html .container .main1 .col a,
+body .container .main1 .col a {
+  color: #B5B5B5;
+}
+html .container .main1 .col a .title,
+body .container .main1 .col a .title {
+  font-weight: bolder;
+  margin-top: 5px;
+}
+@media (max-width: 767px) {
+  html .container .main1 .col a .title,
+  body .container .main1 .col a .title {
+    font-size: 18px;
+  }
+}
+html .container .main1 .col a .studio,
+body .container .main1 .col a .studio {
+  font-size: 16px;
+  font-weight: lighter;
+  padding-top: 30px;
+}
+@media (max-width: 767px) {
+  html .container .main1 .col a .studio,
+  body .container .main1 .col a .studio {
+    font-size: 14px;
+  }
+}
+html .container .main1 .col a .price,
+body .container .main1 .col a .price {
+  font-size: 18px;
+  color: #E5E5E5;
+}
+@media (max-width: 767px) {
+  html .container .main1 .col a .price,
+  body .container .main1 .col a .price {
+    font-size: 16px;
+  }
 }
 @media (max-width: 1400px) {
   html .container .main1 .fading6,
@@ -396,7 +438,7 @@ body .container .main1 .col img {
 @media (max-width: 992px) {
   html .container .main1 .fading6,
   body .container .main1 .fading6 {
-    display: inline-block;
+    display: flex;
   }
 }
 @media (max-width: 1200px) {
@@ -408,7 +450,7 @@ body .container .main1 .col img {
 @media (max-width: 992px) {
   html .container .main1 .fading5,
   body .container .main1 .fading5 {
-    display: inline-block;
+    display: flex;
   }
 }
 html .container .lowerButton,
@@ -430,25 +472,58 @@ body .container .lowerButton a img {
 @media (max-width: 767px) {
   html .container .lowerButton,
   body .container .lowerButton {
-    display: inline-block;
-    padding-left: 20%;
-  }
-}
-@media (max-width: 450px) {
-  html .container .lowerButton,
-  body .container .lowerButton {
-    padding-left: 18%;
-  }
-}
-@media (max-width: 350px) {
-  html .container .lowerButton,
-  body .container .lowerButton {
-    padding-left: 16%;
+    display: flex;
+    justify-content: center;
   }
 }
 html .container .main2,
 body .container .main2 {
   margin-top: 0;
+}
+html .container .main2 img:hover,
+body .container .main2 img:hover {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  animation: flash 1.5s;
+}
+html .container .main2 a,
+body .container .main2 a {
+  color: #141414;
+}
+html .container .main2 a .title,
+body .container .main2 a .title {
+  font-weight: bolder;
+  margin-top: 5px;
+}
+@media (max-width: 767px) {
+  html .container .main2 a .title,
+  body .container .main2 a .title {
+    font-size: 18px;
+  }
+}
+html .container .main2 a .studio,
+body .container .main2 a .studio {
+  font-size: 16px;
+  font-weight: lighter;
+  padding-top: 30px;
+}
+@media (max-width: 767px) {
+  html .container .main2 a .studio,
+  body .container .main2 a .studio {
+    font-size: 14px;
+  }
+}
+html .container .main2 a .price,
+body .container .main2 a .price {
+  font-size: 18px;
+  color: #E5E5E5;
+}
+@media (max-width: 767px) {
+  html .container .main2 a .price,
+  body .container .main2 a .price {
+    font-size: 16px;
+  }
 }
 html .container .main2 .col,
 body .container .main2 .col {
@@ -466,7 +541,8 @@ body .container .main2 .col .mobileImage {
 @media (max-width: 1400px) {
   html .container .main2 .col,
   body .container .main2 .col {
-    padding-left: 10%;
+    display: flex;
+    justify-content: center;
   }
   html .container .main2 .col .mainImage,
   body .container .main2 .col .mainImage {
@@ -474,20 +550,12 @@ body .container .main2 .col .mobileImage {
   }
 }
 @media (max-width: 992px) {
-  html .container .main2 .col,
-  body .container .main2 .col {
-    padding-left: 10%;
-  }
   html .container .main2 .col .mainImage,
   body .container .main2 .col .mainImage {
     width: 600px;
   }
 }
 @media (max-width: 767px) {
-  html .container .main2 .col,
-  body .container .main2 .col {
-    padding-left: 15%;
-  }
   html .container .main2 .col .mobileImage,
   body .container .main2 .col .mobileImage {
     display: inline-block;
@@ -513,7 +581,7 @@ html .container .hotGames img,
 body .container .hotGames img {
   width: 62px;
 }
-@media (max-width: 450px) {
+@media (max-width: 767px) {
   html .container .hotGames img,
   body .container .hotGames img {
     display: none;
@@ -530,13 +598,24 @@ body .container .hotGames .text {
 @media (max-width: 1400px) {
   html .container .hotGames,
   body .container .hotGames {
-    padding-left: 10%;
+    padding-left: 13%;
   }
 }
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
   html .container .hotGames,
   body .container .hotGames {
-    padding-left: 10%;
+    padding-left: 6%;
+  }
+}
+@media (max-width: 767px) {
+  html .container .hotGames,
+  body .container .hotGames {
+    padding-left: 0;
+    justify-content: center;
+  }
+  html .container .hotGames .text,
+  body .container .hotGames .text {
+    transform: translateX(0);
   }
 }
 html .container .main3 .col .mainImage,
@@ -637,6 +716,10 @@ body .container .main3 .col .imgText .imgButton a img {
     display: none;
   }
 }
+html .container .main3 .col .imgText .imgButton img:hover,
+body .container .main3 .col .imgText .imgButton img:hover {
+  opacity: 0.9;
+}
 @media (max-width: 767px) {
   html .container .main3 .col .imgText,
   body .container .main3 .col .imgText {
@@ -677,6 +760,10 @@ body .container .underImgButton a {
 html .container .underImgButton a img,
 body .container .underImgButton a img {
   width: 222px;
+}
+html .container .underImgButton img:hover,
+body .container .underImgButton img:hover {
+  opacity: 0.9;
 }
 html .container .outerText,
 body .container .outerText {
